@@ -7,11 +7,6 @@ import { authGuardGuard } from 'src/app/services/auth-guard.guard';
 const routes: Routes = [
 { 
   path: 'login', component: LoginComponent,
-  canActivate: [authGuardGuard],
-  data: {
-      username: 'flora80',
-      password: '1234',
-  },
 },
 { path: 'subscribe', component: SubscribeComponent },
 {

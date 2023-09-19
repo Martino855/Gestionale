@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class GuardService {
       password: 1234
     }
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   authUser(username: string,): Promise<boolean> {
     return new Promise(
@@ -20,9 +21,9 @@ export class GuardService {
             if (this.users.username == username) {
               ok(true);
             }
+            else this.route.navigate(['public'])
             1000
           }
-
         )
       },
     )
