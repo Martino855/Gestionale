@@ -5,6 +5,9 @@ import { PrivateComponent } from './private/private.component';
 import { UsersComponent } from './users/users.component';
 import { UserdetailComponent } from './userdetail/userdetail.component';
 import { CompanyComponent } from './company/company.component';
+import { DetailsComponent } from './company/details/details.component';
+import { SettingComponent } from './company/setting/setting.component';
+import { InvoicesComponent } from './company/invoices/invoices.component';
 
 const routes: Routes = [
   {
@@ -13,8 +16,17 @@ const routes: Routes = [
     children: [
       { path: 'home', component: HomeComponent },
       { path: 'users', component: UsersComponent },
-      { path: ':id', component: UserdetailComponent },
-      { path: 'company', component: CompanyComponent },
+      { path: 'user/:id', component: UserdetailComponent },
+      {
+        path: 'company',
+        component: CompanyComponent,
+        children: [
+          { path: 'details', component: DetailsComponent },
+          { path: 'settings', component: SettingComponent },
+          { path: 'invoices', component: InvoicesComponent },
+          { path: '', redirectTo: 'details', pathMatch: 'full' },
+        ],
+      },
     ],
   },
 ];
