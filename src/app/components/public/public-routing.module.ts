@@ -1,11 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { SubscribeComponent } from './subscribe/subscribe.component';
+import { authGuardGuard } from 'src/app/services/auth-guard.guard';
 
-const routes: Routes = [{ path: '', component: LoginComponent }];
+const routes: Routes = [
+{ 
+  path: 'login', component: LoginComponent,
+  canActivate: [authGuardGuard],
+  data: {
+      username: 'flora80',
+      password: '1234',
+  },
+},
+{ path: 'subscribe', component: SubscribeComponent },
+{
+  path: '',
+  redirectTo: 'login',
+  pathMatch: 'full'
+},
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PublicRoutingModule {}
+export class PublicRoutingModule { }
