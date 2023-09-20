@@ -1,1 +1,19 @@
-<p>home works!</p>
+<h1>Home</h1>
+<!--
+<button class="btn btn-outline-primary me-2" (click)="setAntonio()" > Imposta Utente Antonio</button>
+<button class="btn btn-outline-primary me-2" (click)="setPippo()" > Imposta Utente Pippo</button>
+-->
+
+<hr>
+
+<pre>
+{{user$ | async | json }}
+</pre>
+<hr>
+<h3>Playlist</h3>
+<button class="btn btn-outline-primary me-2" (click)="addItem()" > Aggiungi Item</button>
+<ul>
+    <li *ngFor="let item of playlist"> {{item}}</li>
+</ul>
+
+

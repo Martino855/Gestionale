@@ -32,7 +32,32 @@
       <li class="list-group-item" routerLink="../public" routerLinkActive="selected">
         Public Area
       </li>
+
+      <li class="list-group-item" (click)="logout()">
+        Logout
+      </li>
     </ul>
+<pre>
+ {{user$ | async | json}}
+</pre>
+
+stampo playlist$
+
+<ul>
+  <li *ngFor="let item of playlist$ | async"> {{item}}</li>
+</ul>
+
+<hr>
+stampo playlist
+<ul>
+  <li *ngFor="let item of playlist"> {{item}}</li>
+</ul>
+
+
+
+
   </div>
-  <div class="col-8"><router-outlet></router-outlet></div>
+  <div class="col-8">
+    <router-outlet></router-outlet>
+  </div>
 </div>
