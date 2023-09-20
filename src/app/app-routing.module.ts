@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { authGuardGuard } from './services/auth-guard.guard';
+import { authGuard } from './services/auth-guard.guard';
 
 const routes: Routes = [
   {
@@ -9,7 +9,7 @@ const routes: Routes = [
       import('./pages/private/private.module').then(
         (m) => m.PrivateModule
       ),
-      canActivate: [authGuardGuard],
+      canActivate: [authGuard],
       data: {
           username: 'flora80',// NO !!
           password: '1234', // NO !!
