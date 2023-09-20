@@ -6,19 +6,19 @@ const routes: Routes = [
   {
     path: 'private',
     loadChildren: () =>
-      import('./components/private/private.module').then(
+      import('./pages/private/private.module').then(
         (m) => m.PrivateModule
       ),
       canActivate: [authGuardGuard],
       data: {
-          username: 'flora80',
-          password: '1234',
+          username: 'flora80',// NO !!
+          password: '1234', // NO !!
       },
   },
   {
     path: 'public',
     loadChildren: () =>
-      import('./components/public/public.module').then((m) => m.PublicModule),
+      import('./pages/public/public.module').then((m) => m.PublicModule),
   },
   { path: '', redirectTo: 'private', pathMatch: 'full' },
 ];

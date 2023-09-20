@@ -19,13 +19,7 @@ const routes: Routes = [
       { path: 'user/:id', component: UserdetailComponent },
       {
         path: 'company',
-        component: CompanyComponent,
-        children: [
-          { path: 'details', component: DetailsComponent },
-          { path: 'settings', component: SettingComponent },
-          { path: 'invoices', component: InvoicesComponent },
-          { path: '', redirectTo: 'details', pathMatch: 'full' },
-        ],
+        loadChildren: () => import('./company/company.module').then( m => m.CompanyModule)
       },
     ],
   },
