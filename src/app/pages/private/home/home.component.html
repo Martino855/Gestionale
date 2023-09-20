@@ -4,16 +4,22 @@
 <button class="btn btn-outline-primary me-2" (click)="setPippo()" > Imposta Utente Pippo</button>
 -->
 
-<hr>
+<hr />
 
-<pre>
-{{user$ | async | json }}
+<pre
+  >{{ user$ | async | json }}
 </pre>
-<hr>
+<hr />
 <h3>Playlist</h3>
-<button class="btn btn-outline-primary me-2" (click)="addItem()" > Aggiungi Item</button>
+<button class="btn btn-outline-primary me-2" (click)="addItem()">
+  Aggiungi Item
+</button>
+
 <ul>
-    <li *ngFor="let item of playlist"> {{item}}</li>
+  <li *ngFor="let item of playlist">
+    {{ item
+    }}<button class="btn btn-outline-danger m-2" (click)="remove(item)">
+      Rimuovi Item
+    </button>
+  </li>
 </ul>
-
-
