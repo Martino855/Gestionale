@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-company',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class CompanyComponent {
   active = 1;
+
+  constructor(route: ActivatedRoute){
+    console.log(route);
+    //@todo: FIX active settings at startup
+  }
 }
