@@ -7,6 +7,7 @@ import { UsersComponent } from './users/users.component';
 import { UserdetailComponent } from './userdetail/userdetail.component';
 import { PrivateComponent } from './private/private.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ObservableComponent } from './observable/observable.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     UsersComponent,
     UserdetailComponent,
     PrivateComponent,
+    ObservableComponent,
    
   ],
   imports: [CommonModule, PrivateRoutingModule, NgbModule],

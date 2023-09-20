@@ -8,6 +8,7 @@ import { CompanyComponent } from './company/company.component';
 import { DetailsComponent } from './company/details/details.component';
 import { SettingComponent } from './company/setting/setting.component';
 import { InvoicesComponent } from './company/invoices/invoices.component';
+import { ObservableComponent } from './observable/observable.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'users', component: UsersComponent },
       { path: 'user/:id', component: UserdetailComponent },
+      { path: 'observables', component: ObservableComponent },
       {
         path: 'company',
         loadChildren: () => import('./company/company.module').then( m => m.CompanyModule)

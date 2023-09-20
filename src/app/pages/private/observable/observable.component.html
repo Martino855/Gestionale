@@ -1,0 +1,30 @@
+<h1>Test Case Observables</h1>
+
+<button class="btn btn-outline-primary me-2" (click)="scatenaEvento()"> Scatena Evento</button>
+<button class="btn btn-outline-primary me-2" (click)="scatenaEventoComponente()"> Scatena Evento Da componente</button>
+<button class="btn btn-outline-primary" (click)="showDiv=!showDiv"> Mostra/Nascondi</button>
+
+<div *ngIf="showDiv" class="mt-2">
+
+    <h2>Observable Classico</h2>
+    <pre>
+> {{observableClassico | async }} ASYNC
+> {{valoreObservable}} Sottoscrizione dopo 2 secondi
+</pre>
+
+    <hr>
+    <h2>Subject</h2>
+    <pre>
+> {{subject | async }} ASYNC
+> {{valoreSubject}} Sottoscrizione dopo 2 secondi
+</pre>
+
+
+    <hr>
+    <h2>BehaviourSubject</h2>
+    <pre>
+> {{behaviourSubject | async }} ASYNC
+> {{valoreBehaviourSubject}} Sottoscrizione dopo 2 secondi
+</pre>
+
+</div>
